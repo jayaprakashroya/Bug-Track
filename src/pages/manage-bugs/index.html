@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BugTrack — Manage Bugs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">B</div><span>BugTrack</span></div>
+    <p class="workspace">WORKSPACE</p>
+    <nav>
+      <a href="#"><span>▦</span>Dashboard</a>
+      <a href="#"><span>⊕</span>Report a Bug <b>＋</b></a>
+      <a class="active" href="index.html"><span>☷</span>Manage Bugs</a>
+      <a href="../bug-status/index.html"><span>⌁</span>Bug Status</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-card"><i>?</i><div><strong>Need a hand?</strong><small>Check your team guide</small></div></div><a class="logout" href="#"><span>↪</span>Logout</a></div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="topbar-actions"><button>◷</button><button>♧</button></div></header>
+    <section class="page">
+      <div class="heading"><div><h1>Manage Bugs</h1><p>Track, assign, and manage reported issues across projects.</p></div><button class="primary">＋ Report Bug</button></div>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search by bug ID or title...">
+        <select id="status"><option value="">All statuses</option><option>Open</option><option>Assigned</option><option>In Progress</option><option>Resolved</option><option>Retest</option><option>Closed</option><option>Reopened</option></select>
+        <select id="severity"><option value="">All severities</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select>
+        <select id="assignee"><option value="">All assignees</option><option>Ravi Kumar</option><option>Maya Patel</option><option>Ethan Lee</option><option>Unassigned</option></select>
+        <button id="clear" class="clear">Clear filters</button>
+      </div>
+      <div class="table-card"><table><thead><tr><th>BUG ID</th><th>BUG</th><th>SEVERITY</th><th>STATUS</th><th>ASSIGNEE</th><th>REPORTER</th><th>ACTIONS</th></tr></thead><tbody id="rows"></tbody></table><div id="footer" class="footer"></div></div>
+    </section>
+  </main>
+  <div id="modal" class="modal hidden"><div class="dialog"><div class="warning">!</div><h3>Delete this bug?</h3><p id="deleteText">This action cannot be undone.</p><div><button id="cancel" class="secondary">Cancel</button><button id="confirm" class="danger">Delete bug</button></div></div></div>
+  <script src="../../data/bugs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
